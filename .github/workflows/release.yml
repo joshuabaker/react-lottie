@@ -6,10 +6,10 @@ on:
       - main
 
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-  id-token: write
+  contents: write # to be able to publish a GitHub release
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
 
 jobs:
   build:
@@ -17,11 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          registry-url: "https://registry.npmjs.org/"
       - run: yarn install
       - run: yarn build
-      - run: npx semantic-release
-        env:
+      - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
