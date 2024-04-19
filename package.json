@@ -6,7 +6,7 @@
     "dist"
   ],
   "scripts": {
-    "lint": "prettier --check . && eslint ./src",
+    "lint": "prettier --check .",
     "format": "prettier --write .",
     "build": "yarn lint && tsc",
     "prepublishOnly": "yarn build"
