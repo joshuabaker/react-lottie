@@ -16,8 +16,8 @@ export function useLottie(
   useEffect(() => {
     if (ref.current) {
       const instance = lottie.loadAnimation({
-        container: ref.current,
         ...params,
+        container: ref.current,
       });
 
       setAnimation(instance);
