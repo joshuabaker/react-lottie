@@ -1,0 +1,1 @@
+export { useLottie } from "./useLottie";
