@@ -8,7 +8,7 @@ import lottie, {
 import { RefObject, useState } from "react";
 import useDeepCompareEffect from "use-deep-compare-effect";
 
-export default function useLottie(
+export function useLottie(
   ref: RefObject<HTMLElement>,
   params: AnimationConfigWithPath | AnimationConfigWithData
 ): AnimationItem | null {
