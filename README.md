@@ -86,9 +86,9 @@ function Animation(props) {
 > 
 >   animationItem?.addEventListener("complete", completeHandler); // Don’t do this
 > }, [animationItem]);
+> ```
 >
 > This is due to how `lottie-web` internally handles events.
-> ```
 
 ## Why?
 
