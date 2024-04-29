@@ -10,15 +10,15 @@
     "build": "yarn lint && tsc",
     "prepublishOnly": "yarn build"
   },
+  "dependencies": {
+    "lottie-web": "^5.0.1",
+    "use-deep-compare-effect": "^1.0.0"
+  },
   "peerDependencies": {
-    "lottie-web": "^5.7.4",
-    "use-deep-compare-effect": "^1",
-    "react": "^17 | ^18 | ^19"
+    "react": "^17 || ^18 || ^19"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
-    "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^11.0.3",
     "@types/react": "^18.2.79",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
@@ -26,7 +26,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "lottie-web": "^5.12.2",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "semantic-release": "^22.0.12",
