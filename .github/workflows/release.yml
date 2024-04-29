@@ -15,11 +15,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - run: yarn install
-      - run: yarn build
-      - env:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+
+      - name: 📥 Install
+        run: yarn install
+
+      - name: 🏗 Build
+        run: yarn build
+
+      - name: 🚀 Release
+        run: npx semantic-release@22
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
