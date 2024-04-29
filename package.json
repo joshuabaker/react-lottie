@@ -1,6 +1,5 @@
 {
   "name": "@joshuabaker/react-lottie",
-  "version": "0.0.0",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -13,7 +12,8 @@
   },
   "peerDependencies": {
     "lottie-web": "^5.7.4",
-    "react": "^17 | ^18"
+    "use-deep-compare-effect": "^1",
+    "react": "^17 | ^18 | ^19"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",

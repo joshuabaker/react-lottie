@@ -1,19 +1,20 @@
 "use client";
 
 import lottie, {
-  AnimationItem,
-  AnimationConfigWithPath,
   AnimationConfigWithData,
+  AnimationConfigWithPath,
+  AnimationItem,
 } from "lottie-web";
-import { useEffect, useState, RefObject } from "react";
+import { RefObject, useState } from "react";
+import useDeepCompareEffect from "use-deep-compare-effect";
 
-export function useLottie(
+export default function useLottie(
   ref: RefObject<HTMLElement>,
   params: AnimationConfigWithPath | AnimationConfigWithData
 ): AnimationItem | null {
   const [animation, setAnimation] = useState<AnimationItem | null>(null);
 
-  useEffect(() => {
+  useDeepCompareEffect(() => {
     if (ref.current) {
       const instance = lottie.loadAnimation({
         ...params,
@@ -27,9 +28,7 @@ export function useLottie(
         setAnimation(null);
       };
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref.current]);
+  }, [ref, params]);
 
   return animation;
 }
