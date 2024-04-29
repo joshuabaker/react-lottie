@@ -4,6 +4,16 @@
 
 A React hook to render Lottie animations using Airbnb’s JavaScript library.
 
+## Install
+
+```
+npm install @joshuabaker/react-lottie
+```
+
+```
+yarn add @joshuabaker/react-lottie
+```
+
 ## Usage
 
 The `useLottie` hook takes two arguments:
